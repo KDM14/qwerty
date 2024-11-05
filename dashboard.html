@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Dashboard Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .user-details, .medical-history {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .user-details p, .medical-history p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .btn-logout {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-logout:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>Welcome to Your Dashboard</h1>
+
+        <!-- User Details Section -->
+        <div class="user-details">
+            <div class="section-title">User Details</div>
+            <p><strong>Name:</strong> Krishna Vamsi</p>
+            <p><strong>Phone Number:</strong> 9182448455</p>
+            <p><strong>Email ID:</strong> vamsi@example.com</p>
+            <p><strong>Wallet Balance:</strong> $500</p>
+            <p><strong>Total Expenses:</strong> $150</p>
+        </div>
+
+        <!-- Medical History Section -->
+        <div class="medical-history">
+            <div class="section-title">Medical History</div>
+            <p><strong>Chronic Diseases:</strong> Hypertension, Diabetes</p>
+            <p><strong>Current Medications:</strong> Metformin, Lisinopril</p>
+            <p><strong>Recent Checkup:</strong> October 2024</p>
+            <p><strong>Allergies:</strong> Penicillin</p>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function logout() {
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+</html>
