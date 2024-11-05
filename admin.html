@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Admin Dashboard</title>
+    <title>Hospital Management Dashboard</title>
     <style>
         /* General Styles */
         body {
@@ -107,37 +107,29 @@
             margin: 10px;
         }
 
-        /* User Card */
-        .user-card {
+        /* Card Style */
+        .card {
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin: 15px;
             text-align: center;
-            flex: 1 1 calc(25% - 30px);
-            max-width: calc(25% - 30px);
+            flex: 1 1 calc(30% - 30px);
+            max-width: calc(30% - 30px);
         }
 
-        .user-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            object-fit: cover;
-        }
-
-        .user-card h3 {
+        .card h3 {
             margin: 10px 0;
             color: #333;
         }
 
-        .user-details {
+        .card p {
             color: #555;
             font-size: 14px;
         }
 
-        .user-actions button {
+        .card button {
             background-color: #28a745;
             color: white;
             padding: 8px 12px;
@@ -148,7 +140,7 @@
             transition: background 0.3s;
         }
 
-        .user-actions button:hover {
+        .card button:hover {
             background-color: #218838;
         }
 
@@ -175,13 +167,13 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-            .user-card {
+            .card {
                 max-width: calc(50% - 30px);
             }
         }
 
         @media (max-width: 480px) {
-            .user-card {
+            .card {
                 max-width: 100%;
             }
         }
@@ -200,45 +192,44 @@
     <!-- Admin Dashboard -->
     <div class="dashboard" id="dashboard">
         <div class="dashboard-header">
-            <h1>Admin Dashboard</h1>
-            <button onclick="addUser()">+ Add New User</button>
+            <h1>Hospital Management Dashboard</h1>
+            <button onclick="addPatient()">+ Add New Patient</button>
         </div>
 
         <!-- Search and Analytics -->
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search users by name..." oninput="searchUsers()">
+            <input type="text" id="searchInput" placeholder="Search patients by name..." oninput="searchRecords()">
         </div>
         
         <div class="analytics-container">
             <div class="analytics">
                 <div>
-                    <h2>Total Users</h2>
-                    <p id="totalUsers">0</p>
+                    <h2>Total Patients</h2>
+                    <p id="totalPatients">0</p>
                 </div>
                 <div>
-                    <h2>Total Wallet Balance</h2>
-                    <p id="totalBalance">$0</p>
+                    <h2>Available Doctors</h2>
+                    <p id="availableDoctors">0</p>
                 </div>
                 <div>
-                    <h2>Average Expenses</h2>
-                    <p id="avgExpenses">$0</p>
+                    <h2>Occupied Beds</h2>
+                    <p id="occupiedBeds">0</p>
                 </div>
             </div>
         </div>
 
-        <!-- User List -->
-        <div class="dashboard-container" id="userList">
-            <!-- Sample User Card -->
-            <div class="user-card" id="user1">
-                <img src="https://via.placeholder.com/80" alt="User Image" class="user-image">
-                <h3>John Doe</h3>
-                <p class="user-details">Phone: +1234567890</p>
-                <p class="user-details">Email: john.doe@example.com</p>
-                <p class="user-details">Wallet: $200</p>
-                <p class="user-details">Expenses: $50</p>
-                <div class="user-actions">
-                    <button>Edit</button>
-                    <button onclick="deleteUser('user1')">Delete</button>
+        <!-- Patient List -->
+        <div class="dashboard-container" id="patientList">
+            <!-- Sample Patient Card -->
+            <div class="card" id="patient1">
+                <h3>Jane Doe</h3>
+                <p>Patient ID: P001</p>
+                <p>Age: 30</p>
+                <p>Contact: +1234567890</p>
+                <p>Status: Under Observation</p>
+                <div class="card-actions">
+                    <button onclick="editPatient('patient1')">Edit</button>
+                    <button onclick="dischargePatient('patient1')">Discharge</button>
                 </div>
             </div>
         </div>
@@ -255,7 +246,7 @@
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
-            if (password === "roohan") {
+            if (password === "yourSecurePassword") {
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('dashboard').style.display = 'block';
                 updateDashboardStats();
@@ -264,15 +255,14 @@
             }
         }
 
-        function addUser() {
-            alert("Add User functionality not implemented yet.");
-            // Code to add new user goes here
+        function addPatient() {
+            alert("Add Patient functionality not implemented yet.");
         }
 
-        function deleteUser(userId) {
-            const userCard = document.getElementById(userId);
-            userCard.remove();
-            logActivity("User deleted: " + userId);
+        function dischargePatient(patientId) {
+            const patientCard = document.getElementById(patientId);
+            patientCard.remove();
+            logActivity("Patient discharged: " + patientId);
             updateDashboardStats();
         }
 
@@ -285,6 +275,11 @@
 
         function updateDashboardStats() {
             // Mock data - Replace with real calculations
-            document.getElementById('totalUsers').innerText = "10";
-            document.getElementById('totalBalance').innerText = "$2000";
-           
+            document.getElementById('totalPatients').innerText = "50";
+            document.getElementById('availableDoctors').innerText = "10";
+            document.getElementById('occupiedBeds').innerText = "20";
+        }
+    </script>
+</body>
+</html>
+
