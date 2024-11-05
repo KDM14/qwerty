@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Reset and Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+        }
+
+        /* Container Styling */
+        .profile-container {
+            width: 80%;
+            max-width: 700px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Header with Profile Image */
+        .profile-header {
+            background: url('https://via.placeholder.com/700x200') no-repeat center;
+            background-size: cover;
+            height: 200px;
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Content Styling */
+        .profile-content {
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        .profile-content h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile-content p {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Details Table */
+        .profile-details {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        .profile-details th, .profile-details td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-details th {
+            color: #555;
+            font-weight: bold;
+        }
+
+        .profile-details td {
+            color: #333;
+        }
+
+        /* Button */
+        .btn-edit {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-edit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Header with Background Image -->
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150" alt="User Image" class="profile-img">
+        </div>
+
+        <!-- Content Section -->
+        <div class="profile-content">
+            <h2>John Doe</h2>
+            <p>User Profile Details</p>
+
+            <!-- Details Table -->
+            <table class="profile-details">
+                <tr>
+                    <th>Name</th>
+                    <td>John Doe</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>+1 234 567 890</td>
+                </tr>
+                <tr>
+                    <th>Email ID</th>
+                    <td>johndoe@example.com</td>
+                </tr>
+                <tr>
+                    <th>Amount in Wallet</th>
+                    <td>$150.00</td>
+                </tr>
+                <tr>
+                    <th>Monthly Expenses</th>
+                    <td>$75.00</td>
+                </tr>
+            </table>
+
+            <!-- Edit Profile Button -->
+            <a href="#" class="btn-edit">Edit Profile</a>
+        </div>
+    </div>
+
+</body>
+</html>
