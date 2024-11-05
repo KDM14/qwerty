@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System - User Login</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and Main Container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Login Styling */
+        #login-page {
+            display: block;
+        }
+
+        #dashboard-page {
+            display: none;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: red;
+        }
+
+        /* Dashboard Styling */
+        #dashboard-content {
+            padding: 20px;
+        }
+
+        #dashboard-content h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .user-details, .medical-history {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .user-details h3, .medical-history h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .user-details p, .medical-history p {
+            margin-bottom: 8px;
+        }
+
+        .btn-logout {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-logout:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for Login and Dashboard -->
+    <div class="container">
+
+        <!-- Login Page -->
+        <div id="login-page">
+            <h2>User Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="checkLogin()">Login</button>
+            <div class="message" id="message"></div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page">
+            <div id="dashboard-content">
+                <h1>Welcome to Your Dashboard</h1>
+
+                <!-- User Details Section -->
+                <div class="user-details">
+                    <h3>User Details</h3>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Phone Number:</strong> +123 456 7890</p>
+                    <p><strong>Email ID:</strong> johndoe@example.com</p>
+                    <p><strong>Wallet Balance:</strong> $500</p>
+                    <p><strong>Total Expenses:</strong> $150</p>
+                </div>
+
+                <!-- Medical History Section -->
+                <div class="medical-history">
+                    <h3>Medical History</h3>
+                    <p><strong>Chronic Diseases:</strong> Hypertension, Diabetes</p>
+                    <p><strong>Current Medications:</strong> Metformin, Lisinopril</p>
+                    <p><strong>Recent Checkup:</strong> October 2024</p>
+                    <p><strong>Allergies:</strong> Penicillin</p>
+                </div>
+
+                <!-- Logout Button -->
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to Toggle Pages and Verify Login -->
+    <script>
+        function checkLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            // Set your valid credentials here
+            const validUsername = 'user';
+            const validPassword = '123';
+
+            if (username === validUsername && password === validPassword) {
+                // Hide login page and show dashboard
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('dashboard-page').style.display = 'block';
+            } else {
+                message.textContent = 'Invalid username or password. Please try again.';
+            }
+        }
+
+        function logout() {
+            // Show login page and hide dashboard
+            document.getElementById('login-page').style.display = 'block';
+            document.getElementById('dashboard-page').style.display = 'none';
+            document.getElementById('message').textContent = '';
+        }
+    </script>
+
+</body>
+</html>
