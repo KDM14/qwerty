@@ -180,7 +180,7 @@
 					<label><input type="checkbox"> Stay signed in</label>
 					</div>
 					<div class="col-md-6">
-					<button > <a href="user1.html" >Login</a></button>
+					<button onclick="checkLogin()"> Login</button>
 					</div>
 					</div>
 
@@ -307,9 +307,26 @@
 		</div>
 		<!--=== End Footer ===-->
 </div><!--/wrapper-->
+<script type="text/javascript" src="assets/plugins/jquery/validation.js">
+        function checkLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            // Set your valid credentials here
+            const validUsername = 'user';
+            const validPassword = '123';
+
+            if (username === validUsername && password === validPassword) {
+                // Redirect to the user dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                message.textContent = 'Invalid username or password. Please try again.';
+            }
+        }
+</script>
 
 <!-- Login Javascript -->
-<script type="text/javascript" src="assets/plugins/jquery/validation.js"></script>
 
 </body>
 </html>
